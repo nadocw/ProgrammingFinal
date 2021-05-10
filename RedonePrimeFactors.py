@@ -3,7 +3,7 @@
 def getLang():
     lang = input("What language? Choose Spanish or English ")
     lang = lang[0]
-    if lang in ["s"]:
+    if lang in ["s", "S"]:
         lang = es
         print("Seleccionaste español")
     else:
