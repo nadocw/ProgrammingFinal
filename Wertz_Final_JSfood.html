@@ -1,0 +1,56 @@
+<!-- Connor Wertz, FINAL -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Wertz JS FastFood FINAL</title>  
+        <style>
+            /* User food inputs */
+            #foods {
+                color: red;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-size: x-large;
+            }
+
+            h1, h3 {
+                color: white;
+            }
+        </style> 
+    </head>
+    <body style="background-color:rgb(34, 34, 34);">
+
+        <script>
+            // Add items to user food order
+            function selectFoods(){
+                var foodList = [];
+                var x = 0
+                var y = prompt("How many items do you want to order? Enter a whole number, please!")
+                // TO DO: show user how many more items they can add
+                while (x < y) {
+                    foodList.push(prompt("What do you want to order? "));
+                    x ++
+                }
+                checkFoods(foodList);
+                foodList = removeItem(foodList);
+            }
+
+            // Show user currently ordered food items
+            function checkFoods(list){
+                alert("You have currently ordered: " + list)
+            }
+
+            // Remove items from user food order
+            function removeItem(list) {
+                var toRemove = prompt("What item do you want to REMOVE? ");
+                list = list.filter(item => item !== (toRemove));
+                alert("Your new order is: " + list);
+                document.getElementById("foods").innerHTML = list;
+            }
+
+        </script>
+        <h1>Connor's Fast Food Final Exam</h1>
+        <button onclick="selectFoods()"; id = "button1" >Add Items to Order</button>
+        <h3>You ordered:</h3>
+        <p id = "foods"></p>
+    </body>
+</html>
